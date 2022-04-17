@@ -16,7 +16,7 @@ std::array<volatile uint8_t, number_of_leds> leds = {0};
 [[noreturn]] static inline void program(){
 	static const avr::eeprom_array anim [[gnu::section(".eeprom")]] = {fade, onoff<1000>, onoff<500>, rotate<1000>, powerdown};
 
-	static volatile uint8_t anim_index [[gnu::section(".noinit")]];
+	static uint8_t anim_index [[gnu::section(".noinit")]];
 	anim_index = (anim.size()-1) <= anim_index ? 0 : anim_index+1;
 
 	const decltype(anim)::value_type act_anim = anim[anim_index];
