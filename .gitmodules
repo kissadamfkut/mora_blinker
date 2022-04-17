@@ -1,3 +1,6 @@
 [submodule "sw/avr-libstdcpp"]
 	path = sw/avr-libstdcpp
 	url = https://github.com/modm-io/avr-libstdcpp
+[submodule "sw/libavrpp"]
+	path = sw/libavrpp
+	url = https://github.com/kissadamfkut/libavrpp

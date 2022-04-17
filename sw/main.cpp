@@ -1,7 +1,6 @@
 #include <avr/io.h>
 #include "leds.hpp"
 #include  <avr/interrupt.h>
-#include <avr/pgmspace.h>
 #include "timing.hpp"
 
 #include "onoff.hpp"
@@ -10,19 +9,17 @@
 #include "rotate.hpp"
 
 #include <array>
+#include <eeprom_var.hpp>
 
 std::array<volatile uint8_t, number_of_leds> leds = {0};
 
-
 [[noreturn]] static inline void program(){
-	using fptr = void(*)();
-	static const fptr anim[] PROGMEM = {fade, onoff<1000>, onoff<500>, rotate<1000>, powerdown};
+	static  const avr::eeprom_array anim [[gnu::section(".eeprom")]] = {fade, onoff<1000>, onoff<500>, rotate<1000>, powerdown};
 
 	static volatile uint8_t anim_index [[gnu::section(".noinit")]];
-	anim_index = (sizeof(anim)/sizeof(anim[1])-1) <= anim_index ? 0 : anim_index+1;
+	anim_index = (anim.size()-1) <= anim_index ? 0 : anim_index+1;
 
-	const auto act_anim = reinterpret_cast<fptr>( pgm_read_ptr(&anim[anim_index]) );
-	
+	const decltype(anim)::value_type act_anim = anim[anim_index];
 label:
 	act_anim();
 	goto label;
