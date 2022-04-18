@@ -1,5 +1,5 @@
 blink.elf: $(wildcard *.cpp)
-	avr-gcc -Wall -Wextra -g -ffixed-2 -Os -I libavrpp/include -isystem avr-libstdcpp/include -mmcu=attiny13a -std=c++20 -o $@ $^ 
+	avr-gcc -Wall -Wextra -g -ffixed-2 -ffixed-3 -Os -I libavrpp/include -isystem avr-libstdcpp/include -mmcu=attiny13a -std=c++20 -o $@ $^
 
 .PHONY: program size clean reset
 

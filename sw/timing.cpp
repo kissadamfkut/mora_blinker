@@ -5,47 +5,43 @@
 #include<avr/sleep.h>
 
 namespace {
-    static volatile unsigned char systick [[gnu::section(".noinit")]]; //TODO move to be a register variable
+    register uint8_t tick asm("r2");
+    register uint8_t systick asm("r3");
 
-    void pwm(){
-	static uint8_t tick [[gnu::section(".noinit")]];
+    constexpr const bool multiphase_pwm = true;
 
+    void wait_frame(uint8_t delay){
+        delay += systick;
+        do{
+		asm volatile("":"=r" (systick));
+	}while( systick != delay );
+    }
+
+}
+
+ISR(TIM0_OVF_vect){
 	tick--;
 	tick&=0x0f;
-	if(tick==0) [[unlikely]] systick=systick+1;
-	
+	if(tick==0) [[unlikely]] systick++;
 
 	{
 		uint8_t new_out = 0;
 
-		for(uint8_t i = 0; i < number_of_leds; i++) 
-			//if (leds[i] >  (  (tick+(3*i)) & 0x0f  )  ) new_out|=(1<<i);
-			if (leds[i] > tick) new_out|=(1<<i);
+		for(uint8_t i = 0; i < number_of_leds; i++) {
+			if constexpr (multiphase_pwm){
+				if (leds[i] >  (  (tick+(3*i)) & 0x0f  )  ) new_out|=(1<<i);
+			}
+			else{
+				if (leds[i] > tick) new_out|=(1<<i);
+			}
+		}
 
 		PORTB=new_out;
 	}
-    }
-
-#pragma GCC push_options
-#pragma GCC optimize ("no-inline") //This prevents the inharitance of the naked attribute burried under the ISR_NAKED macro
-    void pwm_proxy(){
-    	pwm();
-    }
-#pragma GCC pop_options
 }
 
-ISR(TIM0_OVF_vect, ISR_NAKED){ //NAKED is mandatory, otherwise the save of the whole register set would consume much memory (and CPU time)
-	pwm_proxy();
-	reti();
-}
 
-void wait_frame(const uint8_t delay){
-    const auto start = systick;
-
-    while( (systick - start) < delay );
-}
-
-void delay_iterations(uint16_t iterations){
+void wait_100ms(uint8_t iterations){
 	while(iterations--)
-		wait_frame(200);
+		wait_frame(6);
 }

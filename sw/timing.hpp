@@ -1,13 +1,12 @@
 #pragma once
 #include<cstdint>
 
-void delay_iterations(const uint16_t);
-void wait_frame(const uint8_t delay);
+void wait_100ms(uint8_t);
 
-constexpr uint16_t ms_2_iterations(const uint16_t ms){
-	return ms/4;
+constexpr uint8_t ms_2_iterations(const unsigned ms){
+	return ms < 100 ? 1 : ms/100; //TODO something like a static_warning???
 }
 
-static inline void delay_ms(const uint16_t ms){
-	delay_iterations(ms_2_iterations(ms));
+static inline void delay_ms(const unsigned ms){
+	wait_100ms(ms_2_iterations(ms));
 }
