@@ -4,7 +4,7 @@
 void fade(){
 	uint8_t light;
 
-	for(light = 0; light<max_light;light++){
+	for(light = 0; light<(max_light*3/5);light++){
 		for(int i=0;i<number_of_leds;i++)
 			leds[i]=light;
 
@@ -13,7 +13,8 @@ void fade(){
 
 	delay_ms(300);
 
-	for(; light>0;light--){
+	while(light>0){
+		light--;
 		for(int i=0;i<number_of_leds;i++)
 			leds[i]=light;
 
