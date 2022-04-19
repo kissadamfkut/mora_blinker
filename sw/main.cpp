@@ -11,10 +11,18 @@
 #include <array>
 #include <eeprom_var.hpp>
 
+namespace{ //student definied animations
+#include "alma.hpp"
+//#include "balint.hpp"
+#include "bence.hpp"
+#include "dominik.hpp"
+#include "korte.hpp"
+}
+
 std::array<volatile uint8_t, number_of_leds> leds = {0};
 
 [[noreturn]] static inline void program(){
-	static const avr::eeprom_array anim [[gnu::section(".eeprom")]] = {fade, onoff<1000>, onoff<500>, rotate<1000>, powerdown};
+	static const avr::eeprom_array anim [[gnu::section(".eeprom")]] = {fade, onoff<500>, rotate<1000>, powerdown, alma, bence, powerdown,/*balint, */ dominik<100>, korte, powerdown};
 
 	static uint8_t anim_index [[gnu::section(".noinit")]];
 	anim_index = (anim.size()-1) <= anim_index ? 0 : anim_index+1;
