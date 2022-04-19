@@ -1,6 +1,5 @@
 Mora-blinker
 ========== 
-  ![](pcb.jpg)
 ## Goals
   
 - Provide a simple and cheap educational embedded project
@@ -14,3 +13,7 @@ Mora-blinker
 - Fuse calculation could be more describing
 - May further optimize base code
 - Less numeric constant
+
+## Work of a student
+
+![](pcb.jpg)
