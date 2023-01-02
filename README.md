@@ -41,3 +41,21 @@ The timer overflow interrupt drives a soft-PWM routine. The running animation ch
 ## Work of a student
 
 ![](pcb.jpg)
+
+## Full installion on Debian systems
+```bash
+sudo apt intsall gcc-avr avr-libc make avrdude
+cd sw
+make
+make program
+sudo apt install kdevelop #Optional
+```
+
+## Full installation on Windows systems (not tested)
+- Install the lates AVR-GCC (for eg. https://blog.zakkemble.net/avr-gcc-builds/)
+- Install Code::Blocks (https://www.codeblocks.org/)
+- Open the project, and compile the elf file
+- Use the driver of the programmer to deploy the code
+
+## FAQ
+Sometimes the programmers' device files are created with special permission on linux based systems. You should gather unix group membership to the proper group (dialout, uucp etc.), so you can program your device without sudo
