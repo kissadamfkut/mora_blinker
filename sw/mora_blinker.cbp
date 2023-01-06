@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="mora_blinker" />
+		<Option pch_mode="2" />
+		<Option compiler="avr-gcc" />
+		<Build>
+			<Target title="Release">
+				<Option output="bin/Release/mora_blinker.elf" prefix_auto="1" extension_auto="0" />
+				<Option working_dir="" />
+				<Option object_output="obj/Release/" />
+				<Option type="5" />
+				<Option compiler="avr-gcc" />
+				<Compiler>
+					<Add option="-mmcu=attiny13" />
+					<Add option="-Os" />
+					<Add option="-Wextra" />
+					<Add option="-Wall" />
+					<Add option="-ffixed-2 -ffixed-3 -I libavrpp/include -isystem avr-libstdcpp/include -I student -I .  -std=c++20" />
+				</Compiler>
+			</Target>
+			<Environment>
+				<Variable name="MCU" value="" />
+			</Environment>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+		</Compiler>
+		<Linker>
+			<Add option="-mmcu=attiny13" />
+		</Linker>
+		<ExtraCommands>
+			<Add after="avr-size --mcu=attiny13 -C $(TARGET_OUTPUT_FILE)" />
+			<Mode after="always" />
+		</ExtraCommands>
+		<Unit filename="avr-libstdcpp/include/algorithm" />
+		<Unit filename="avr-libstdcpp/include/any" />
+		<Unit filename="avr-libstdcpp/include/array" />
+		<Unit filename="avr-libstdcpp/include/backward/backward_warning.h" />
+		<Unit filename="avr-libstdcpp/include/backward/binders.h" />
+		<Unit filename="avr-libstdcpp/include/backward/hash_fun.h" />
+		<Unit filename="avr-libstdcpp/include/backward/hash_map" />
+		<Unit filename="avr-libstdcpp/include/backward/hash_set" />
+		<Unit filename="avr-libstdcpp/include/backward/hashtable.h" />
+		<Unit filename="avr-libstdcpp/include/bit" />
+		<Unit filename="avr-libstdcpp/include/bits/algorithmfwd.h" />
+		<Unit filename="avr-libstdcpp/include/bits/alloc_traits.h" />
+		<Unit filename="avr-libstdcpp/include/bits/allocated_ptr.h" />
+		<Unit filename="avr-libstdcpp/include/bits/allocator.h" />
+		<Unit filename="avr-libstdcpp/include/bits/boost_concept_check.h" />
+		<Unit filename="avr-libstdcpp/include/bits/c++0x_warning.h" />
+		<Unit filename="avr-libstdcpp/include/bits/c++allocator.h" />
+		<Unit filename="avr-libstdcpp/include/bits/c++config.h" />
+		<Unit filename="avr-libstdcpp/include/bits/char_traits.h" />
+		<Unit filename="avr-libstdcpp/include/bits/charconv.h" />
+		<Unit filename="avr-libstdcpp/include/bits/concept_check.h" />
+		<Unit filename="avr-libstdcpp/include/bits/cpp_type_traits.h" />
+		<Unit filename="avr-libstdcpp/include/bits/cxxabi_forced.h" />
+		<Unit filename="avr-libstdcpp/include/bits/cxxabi_init_exception.h" />
+		<Unit filename="avr-libstdcpp/include/bits/deque.tcc" />
+		<Unit filename="avr-libstdcpp/include/bits/enable_special_members.h" />
+		<Unit filename="avr-libstdcpp/include/bits/erase_if.h" />
+		<Unit filename="avr-libstdcpp/include/bits/exception_defines.h" />
+		<Unit filename="avr-libstdcpp/include/bits/forward_list.h" />
+		<Unit filename="avr-libstdcpp/include/bits/forward_list.tcc" />
+		<Unit filename="avr-libstdcpp/include/bits/functexcept.h" />
+		<Unit filename="avr-libstdcpp/include/bits/functional_hash.h" />
+		<Unit filename="avr-libstdcpp/include/bits/gslice.h" />
+		<Unit filename="avr-libstdcpp/include/bits/gslice_array.h" />
+		<Unit filename="avr-libstdcpp/include/bits/hash_bytes.h" />
+		<Unit filename="avr-libstdcpp/include/bits/hashtable.h" />
+		<Unit filename="avr-libstdcpp/include/bits/hashtable_policy.h" />
+		<Unit filename="avr-libstdcpp/include/bits/indirect_array.h" />
+		<Unit filename="avr-libstdcpp/include/bits/invoke.h" />
+		<Unit filename="avr-libstdcpp/include/bits/iterator_concepts.h" />
+		<Unit filename="avr-libstdcpp/include/bits/list.tcc" />
+		<Unit filename="avr-libstdcpp/include/bits/mask_array.h" />
+		<Unit filename="avr-libstdcpp/include/bits/memoryfwd.h" />
+		<Unit filename="avr-libstdcpp/include/bits/move.h" />
+		<Unit filename="avr-libstdcpp/include/bits/node_handle.h" />
+		<Unit filename="avr-libstdcpp/include/bits/parse_numbers.h" />
+		<Unit filename="avr-libstdcpp/include/bits/postypes.h" />
+		<Unit filename="avr-libstdcpp/include/bits/predefined_ops.h" />
+		<Unit filename="avr-libstdcpp/include/bits/ptr_traits.h" />
+		<Unit filename="avr-libstdcpp/include/bits/random.h" />
+		<Unit filename="avr-libstdcpp/include/bits/random.tcc" />
+		<Unit filename="avr-libstdcpp/include/bits/range_access.h" />
+		<Unit filename="avr-libstdcpp/include/bits/range_cmp.h" />
+		<Unit filename="avr-libstdcpp/include/bits/ranges_algo.h" />
+		<Unit filename="avr-libstdcpp/include/bits/ranges_algobase.h" />
+		<Unit filename="avr-libstdcpp/include/bits/ranges_uninitialized.h" />
+		<Unit filename="avr-libstdcpp/include/bits/refwrap.h" />
+		<Unit filename="avr-libstdcpp/include/bits/slice_array.h" />
+		<Unit filename="avr-libstdcpp/include/bits/std_abs.h" />
+		<Unit filename="avr-libstdcpp/include/bits/std_function.h" />
+		<Unit filename="avr-libstdcpp/include/bits/stl_algo.h" />
+		<Unit filename="avr-libstdcpp/include/bits/stl_algobase.h" />
+		<Unit filename="avr-libstdcpp/include/bits/stl_bvector.h" />
+		<Unit filename="avr-libstdcpp/include/bits/stl_construct.h" />
+		<Unit filename="avr-libstdcpp/include/bits/stl_deque.h" />
+		<Unit filename="avr-libstdcpp/include/bits/stl_function.h" />
+		<Unit filename="avr-libstdcpp/include/bits/stl_heap.h" />
+		<Unit filename="avr-libstdcpp/include/bits/stl_iterator.h" />
+		<Unit filename="avr-libstdcpp/include/bits/stl_iterator_base_funcs.h" />
+		<Unit filename="avr-libstdcpp/include/bits/stl_iterator_base_types.h" />
+		<Unit filename="avr-libstdcpp/include/bits/stl_list.h" />
+		<Unit filename="avr-libstdcpp/include/bits/stl_map.h" />
+		<Unit filename="avr-libstdcpp/include/bits/stl_multimap.h" />
+		<Unit filename="avr-libstdcpp/include/bits/stl_multiset.h" />
+		<Unit filename="avr-libstdcpp/include/bits/stl_numeric.h" />
+		<Unit filename="avr-libstdcpp/include/bits/stl_pair.h" />
+		<Unit filename="avr-libstdcpp/include/bits/stl_queue.h" />
+		<Unit filename="avr-libstdcpp/include/bits/stl_raw_storage_iter.h" />
+		<Unit filename="avr-libstdcpp/include/bits/stl_relops.h" />
+		<Unit filename="avr-libstdcpp/include/bits/stl_set.h" />
+		<Unit filename="avr-libstdcpp/include/bits/stl_stack.h" />
+		<Unit filename="avr-libstdcpp/include/bits/stl_tempbuf.h" />
+		<Unit filename="avr-libstdcpp/include/bits/stl_tree.h" />
+		<Unit filename="avr-libstdcpp/include/bits/stl_uninitialized.h" />
+		<Unit filename="avr-libstdcpp/include/bits/stl_vector.h" />
+		<Unit filename="avr-libstdcpp/include/bits/string_view.tcc" />
+		<Unit filename="avr-libstdcpp/include/bits/uniform_int_dist.h" />
+		<Unit filename="avr-libstdcpp/include/bits/unique_ptr.h" />
+		<Unit filename="avr-libstdcpp/include/bits/unordered_map.h" />
+		<Unit filename="avr-libstdcpp/include/bits/unordered_set.h" />
+		<Unit filename="avr-libstdcpp/include/bits/uses_allocator.h" />
+		<Unit filename="avr-libstdcpp/include/bits/valarray_after.h" />
+		<Unit filename="avr-libstdcpp/include/bits/valarray_array.h" />
+		<Unit filename="avr-libstdcpp/include/bits/valarray_array.tcc" />
+		<Unit filename="avr-libstdcpp/include/bits/valarray_before.h" />
+		<Unit filename="avr-libstdcpp/include/bits/vector.tcc" />
+		<Unit filename="avr-libstdcpp/include/bitset" />
+		<Unit filename="avr-libstdcpp/include/cassert" />
+		<Unit filename="avr-libstdcpp/include/ccomplex" />
+		<Unit filename="avr-libstdcpp/include/cctype" />
+		<Unit filename="avr-libstdcpp/include/cerrno" />
+		<Unit filename="avr-libstdcpp/include/cfenv" />
+		<Unit filename="avr-libstdcpp/include/cfloat" />
+		<Unit filename="avr-libstdcpp/include/chrono" />
+		<Unit filename="avr-libstdcpp/include/cinttypes" />
+		<Unit filename="avr-libstdcpp/include/ciso646" />
+		<Unit filename="avr-libstdcpp/include/climits" />
+		<Unit filename="avr-libstdcpp/include/cmath" />
+		<Unit filename="avr-libstdcpp/include/compare" />
+		<Unit filename="avr-libstdcpp/include/complex" />
+		<Unit filename="avr-libstdcpp/include/concepts" />
+		<Unit filename="avr-libstdcpp/include/coroutine" />
+		<Unit filename="avr-libstdcpp/include/csetjmp" />
+		<Unit filename="avr-libstdcpp/include/csignal" />
+		<Unit filename="avr-libstdcpp/include/cstdalign" />
+		<Unit filename="avr-libstdcpp/include/cstdarg" />
+		<Unit filename="avr-libstdcpp/include/cstdbool" />
+		<Unit filename="avr-libstdcpp/include/cstddef" />
+		<Unit filename="avr-libstdcpp/include/cstdint" />
+		<Unit filename="avr-libstdcpp/include/cstdio" />
+		<Unit filename="avr-libstdcpp/include/cstdlib" />
+		<Unit filename="avr-libstdcpp/include/cstring" />
+		<Unit filename="avr-libstdcpp/include/ctgmath" />
+		<Unit filename="avr-libstdcpp/include/ctime" />
+		<Unit filename="avr-libstdcpp/include/cuchar" />
+		<Unit filename="avr-libstdcpp/include/cwchar" />
+		<Unit filename="avr-libstdcpp/include/cwctype" />
+		<Unit filename="avr-libstdcpp/include/debug/assertions.h" />
+		<Unit filename="avr-libstdcpp/include/debug/debug.h" />
+		<Unit filename="avr-libstdcpp/include/debug/formatter.h" />
+		<Unit filename="avr-libstdcpp/include/debug/functions.h" />
+		<Unit filename="avr-libstdcpp/include/debug/helper_functions.h" />
+		<Unit filename="avr-libstdcpp/include/debug/macros.h" />
+		<Unit filename="avr-libstdcpp/include/decimal/decimal" />
+		<Unit filename="avr-libstdcpp/include/decimal/decimal.h" />
+		<Unit filename="avr-libstdcpp/include/deque" />
+		<Unit filename="avr-libstdcpp/include/ext/algorithm" />
+		<Unit filename="avr-libstdcpp/include/ext/aligned_buffer.h" />
+		<Unit filename="avr-libstdcpp/include/ext/alloc_traits.h" />
+		<Unit filename="avr-libstdcpp/include/ext/cmath" />
+		<Unit filename="avr-libstdcpp/include/ext/functional" />
+		<Unit filename="avr-libstdcpp/include/ext/hash_map" />
+		<Unit filename="avr-libstdcpp/include/ext/hash_set" />
+		<Unit filename="avr-libstdcpp/include/ext/iterator" />
+		<Unit filename="avr-libstdcpp/include/ext/malloc_allocator.h" />
+		<Unit filename="avr-libstdcpp/include/ext/memory" />
+		<Unit filename="avr-libstdcpp/include/ext/new_allocator.h" />
+		<Unit filename="avr-libstdcpp/include/ext/numeric" />
+		<Unit filename="avr-libstdcpp/include/ext/numeric_traits.h" />
+		<Unit filename="avr-libstdcpp/include/ext/pod_char_traits.h" />
+		<Unit filename="avr-libstdcpp/include/ext/rb_tree" />
+		<Unit filename="avr-libstdcpp/include/ext/slist" />
+		<Unit filename="avr-libstdcpp/include/ext/type_traits.h" />
+		<Unit filename="avr-libstdcpp/include/ext/typelist.h" />
+		<Unit filename="avr-libstdcpp/include/forward_list" />
+		<Unit filename="avr-libstdcpp/include/functional" />
+		<Unit filename="avr-libstdcpp/include/initializer_list" />
+		<Unit filename="avr-libstdcpp/include/iterator" />
+		<Unit filename="avr-libstdcpp/include/limits" />
+		<Unit filename="avr-libstdcpp/include/list" />
+		<Unit filename="avr-libstdcpp/include/map" />
+		<Unit filename="avr-libstdcpp/include/memory" />
+		<Unit filename="avr-libstdcpp/include/new" />
+		<Unit filename="avr-libstdcpp/include/numbers" />
+		<Unit filename="avr-libstdcpp/include/numeric" />
+		<Unit filename="avr-libstdcpp/include/optional" />
+		<Unit filename="avr-libstdcpp/include/queue" />
+		<Unit filename="avr-libstdcpp/include/random" />
+		<Unit filename="avr-libstdcpp/include/ranges" />
+		<Unit filename="avr-libstdcpp/include/ratio" />
+		<Unit filename="avr-libstdcpp/include/scoped_allocator" />
+		<Unit filename="avr-libstdcpp/include/set" />
+		<Unit filename="avr-libstdcpp/include/span" />
+		<Unit filename="avr-libstdcpp/include/stack" />
+		<Unit filename="avr-libstdcpp/include/string_view" />
+		<Unit filename="avr-libstdcpp/include/tuple" />
+		<Unit filename="avr-libstdcpp/include/type_traits" />
+		<Unit filename="avr-libstdcpp/include/unordered_map" />
+		<Unit filename="avr-libstdcpp/include/unordered_set" />
+		<Unit filename="avr-libstdcpp/include/utility" />
+		<Unit filename="avr-libstdcpp/include/valarray" />
+		<Unit filename="avr-libstdcpp/include/variant" />
+		<Unit filename="avr-libstdcpp/include/vector" />
+		<Unit filename="avr-libstdcpp/include/version" />
+		<Unit filename="avr-libstdcpp/src/hashtable-aux.h" />
+		<Unit filename="fade.cpp" />
+		<Unit filename="fade.hpp" />
+		<Unit filename="flicker_guard.hpp" />
+		<Unit filename="fuse.cpp" />
+		<Unit filename="leds.hpp" />
+		<Unit filename="libavrpp/include/eeprom_var.hpp" />
+		<Unit filename="main.cpp" />
+		<Unit filename="onoff.hpp" />
+		<Unit filename="powerdown.cpp" />
+		<Unit filename="powerdown.hpp" />
+		<Unit filename="rotate.hpp" />
+		<Unit filename="student/alma.hpp" />
+		<Unit filename="student/balint.hpp" />
+		<Unit filename="student/bence.hpp" />
+		<Unit filename="student/dominik.hpp" />
+		<Unit filename="student/korte.hpp" />
+		<Unit filename="timing.cpp" />
+		<Unit filename="timing.hpp" />
+		<Extensions />
+	</Project>
+</CodeBlocks_project_file>

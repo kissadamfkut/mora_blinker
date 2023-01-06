@@ -1,0 +1,56 @@
+# depslib dependency file v1.0
+1650312262 source:/home/kisada/projects/mora_blinker/sw/fade.cpp
+	"timing.hpp"
+	"leds.hpp"
+
+1650311065 /home/kisada/projects/mora_blinker/sw/timing.hpp
+	<cstdint>
+
+1650312802 /home/kisada/projects/mora_blinker/sw/leds.hpp
+	<cstdint>
+	<array>
+
+1650304359 source:/home/kisada/projects/mora_blinker/sw/fuse.cpp
+	<avr/io.h>
+
+1653217281 source:/home/kisada/projects/mora_blinker/sw/main.cpp
+	<avr/io.h>
+	"leds.hpp"
+	<avr/interrupt.h>
+	"timing.hpp"
+	"onoff.hpp"
+	"powerdown.hpp"
+	"fade.hpp"
+	"rotate.hpp"
+	<array>
+	<eeprom_var.hpp>
+	"alma.hpp"
+	"bence.hpp"
+	"dominik.hpp"
+	"korte.hpp"
+
+1650304359 /home/kisada/projects/mora_blinker/sw/onoff.hpp
+	"leds.hpp"
+	"timing.hpp"
+
+1650304359 /home/kisada/projects/mora_blinker/sw/powerdown.hpp
+
+1650304359 /home/kisada/projects/mora_blinker/sw/fade.hpp
+
+1650304359 /home/kisada/projects/mora_blinker/sw/rotate.hpp
+	"leds.hpp"
+	"timing.hpp"
+
+1650305449 source:/home/kisada/projects/mora_blinker/sw/powerdown.cpp
+	"powerdown.hpp"
+	<avr/sleep.h>
+	<avr/interrupt.h>
+	<avr/io.h>
+
+1650315662 source:/home/kisada/projects/mora_blinker/sw/timing.cpp
+	"leds.hpp"
+	<avr/io.h>
+	<avr/interrupt.h>
+	"timing.hpp"
+	<avr/sleep.h>
+
